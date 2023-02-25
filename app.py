@@ -33,11 +33,11 @@ def get_message_db():
     Get's connection to database with messages if exists. If not, creates
     '''
     try:
-        #returns database if exists
-        return c.message_db
+        #if database already exists, returns a connection
+        return g.message_db
 
     except:
-        #creating a database
+        #if database doesnt already exist
         with sqlite3.connect(DB_NAME) as conn:
             cur = conn.cursor()
             #command for sql
@@ -49,8 +49,8 @@ def get_message_db():
             """
             cur.execute(cmd)
             conn.commit()
-            c.message_db = conn
-            return c.message_db
+            g.message_db = conn
+            return g.message_db
 
 
 
@@ -58,6 +58,7 @@ def insert_message(request):
     '''
     Inserts message into database
     '''
+    #calling the get_message_db() function listed above to access/create a connection
     conn = get_message_db()
     cur = conn.cursor()
 
