@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2> This should be hard (<em>fun</em>)... </h2>
+{% endblock %}
+
+{% block content %}
+    <form method = "post">
+        <label for="message"> What is your favorite AM song? </label>
+        <input type="text" id="message" name="message">
+        <br>
+        <br>
+        <label for="name"> What is your name?</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <input type="submit" value="Submit response">
+        <br>
+    </form>
+<br>
+{% if name %}
+Hello <b>{{name}}</b>, thank you for submitting your response! Now, see what other people have to say
+{% endif %}
+
+{% endblock %}
