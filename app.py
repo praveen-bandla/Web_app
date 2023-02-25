@@ -34,7 +34,7 @@ def get_message_db():
     '''
     try:
         #returns database if exists
-        return g.message_db
+        return c.message_db
 
     except:
         #creating a database
@@ -49,8 +49,8 @@ def get_message_db():
             """
             cur.execute(cmd)
             conn.commit()
-            g.message_db = conn
-            return g.message_db
+            c.message_db = conn
+            return c.message_db
 
 
 
