@@ -76,7 +76,7 @@ def insert_message(request):
 
 def random_messages(n):
     '''
-    Returns random messages
+    Returns random messages from database
     '''
     conn = get_message_db()
     cur = conn.cursor()
