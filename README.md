@@ -1,4 +1,4 @@
-# A Webpage with Flask
+# A Webapp with Flask
 
 Creating an app with a simple implementation of a message bank for a class project. The app has two main features. It allows the user to:
 1. Submit a response to a prompt asking them their favorite Arctic Monkey song to the message bank
